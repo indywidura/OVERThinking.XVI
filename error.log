@@ -1,0 +1,137 @@
+../arch/arm64/kernel/traps.c:105:16: warning: unused variable 'prev_fp' [-Wunused-variable]
+        unsigned long prev_fp = 0;
+                      ^
+1 warning generated.
+../kernel/sched/core.c:4614:6: warning: unused variable 'i' [-Wunused-variable]
+        int i = 0;
+            ^
+1 warning generated.
+../fs/kernfs/file.c:273:16: warning: stack frame size (4176) exceeds limit (2800) in function 'kernfs_fop_write' [-Wframe-larger-than]
+static ssize_t kernfs_fop_write(struct file *file, const char __user *user_buf,
+               ^
+1 warning generated.
+../fs/proc/cmdline.c:59:7: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+        bool ret = r_len == v_len && !memcmp(r_val, val, r_len);
+             ^
+1 warning generated.
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:1703:2: warning: 'snprintf' size argument is too large; destination buffer has size 64, but size argument is 4096 [-Wfortify-source]
+        snprintf(mp_setting_criteria_csv_filename, PAGE_SIZE, "NT36xxx_MP_Setting_Criteria_%04X.csv", ts->nvt_pid);
+        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:1718:4: warning: 'snprintf' size argument is too large; destination buffer has size 32, but size argument is 4096 [-Wfortify-source]
+                        snprintf(mpcriteria, PAGE_SIZE, "novatek-mp-criteria-%04X", ts->nvt_pid);
+                        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2111:2: warning: 'snprintf' size argument is too large; destination buffer has size 64, but size argument is 4096 [-Wfortify-source]
+        snprintf(mp_setting_criteria_csv_filename, PAGE_SIZE, "NT36xxx_MP_Setting_Criteria_%04X.csv", ts->nvt_pid);
+        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2126:4: warning: 'snprintf' size argument is too large; destination buffer has size 32, but size argument is 4096 [-Wfortify-source]
+                        snprintf(mpcriteria, PAGE_SIZE, "novatek-mp-criteria-%04X", ts->nvt_pid);
+                        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2233:2: warning: 'snprintf' size argument is too large; destination buffer has size 64, but size argument is 4096 [-Wfortify-source]
+        snprintf(mp_setting_criteria_csv_filename, PAGE_SIZE, "NT36xxx_MP_Setting_Criteria_%04X.csv", ts->nvt_pid);
+        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2248:4: warning: 'snprintf' size argument is too large; destination buffer has size 32, but size argument is 4096 [-Wfortify-source]
+                        snprintf(mpcriteria, PAGE_SIZE, "novatek-mp-criteria-%04X", ts->nvt_pid);
+                        ^
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:15: warning: comparing a pointer to a null character constant; did you mean to compare to NULL? [-Wpointer-compare]
+                if  ((cs == '\0') || (ct == '\0'))
+                            ^~~~
+                            (void *)0
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:31: warning: comparing a pointer to a null character constant; did you mean to compare to NULL? [-Wpointer-compare]
+                if  ((cs == '\0') || (ct == '\0'))
+                                            ^~~~
+                                            (void *)0
+6 warnings generated.
+2 warnings generated.
+../drivers/mmc/host/mediatek/ComboA/sd.c:5475:16: warning: unused variable 'flags' [-Wunused-variable]
+        unsigned long flags;
+                      ^
+1 warning generated.
+../drivers/md/dm-bow.c:15:9: warning: 'SECTOR_SIZE' macro redefined [-Wmacro-redefined]
+#define SECTOR_SIZE 512
+        ^
+../include/linux/blkdev.h:1031:9: note: previous definition is here
+#define SECTOR_SIZE (1 << SECTOR_SHIFT)
+        ^
+1 warning generated.
+../drivers/thermal/thermal_core.c:1212:14: warning: 'snprintf' size argument is too large; destination buffer has size 128, but size argument is 4096 [-Wfortify-source]
+       ret = snprintf(boost_buf, PAGE_SIZE, buf);
+             ^
+../drivers/thermal/thermal_core.c:1328:8: warning: 'snprintf' size argument is too large; destination buffer has size 128, but size argument is 4096 [-Wfortify-source]
+       snprintf(board_sensor_temp, PAGE_SIZE, buf);
+       ^
+2 warnings generated.
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:109:6: warning: 'CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF' is not defined, evaluates to 0 [-Wundef]
+#if (CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF && CONFIG_MTPROF)
+     ^
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:752:22: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *' [-Wint-conversion]
+        memcpy(&versionlen, message_buff, sizeof(unsigned int));
+                            ^~~~~~~~~~~~
+../arch/arm64/include/asm/string.h:46:41: note: passing argument to parameter here
+extern void *memcpy(void *, const void *, __kernel_size_t);
+                                        ^
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:758:19: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *' [-Wint-conversion]
+                memcpy(version, message_buff + 4, versionlen);
+                                ^~~~~~~~~~~~~~~~
+../arch/arm64/include/asm/string.h:46:41: note: passing argument to parameter here
+extern void *memcpy(void *, const void *, __kernel_size_t);
+                                        ^
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:2153:21: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+        struct sched_param param = {.sched_priority = 50 };
+                           ^
+4 warnings generated.
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:109:6: warning: 'CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF' is not defined, evaluates to 0 [-Wundef]
+#if (CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF && CONFIG_MTPROF)
+     ^
+1 warning generated.
+../drivers/misc/mediatek/teei/300/tz_driver/backward_driver.c:203:48: warning: incompatible pointer to integer conversion passing 'void *' to parameter of type 'unsigned long' [-Wint-conversion]
+        Invalidate_Dcache_By_Area((unsigned long)ptr, ptr + 4);
+                                                      ^~~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/include/teei_id.h:169:21: note: passing argument to parameter 'end' here
+                                                unsigned long end)
+                                                              ^
+../drivers/misc/mediatek/teei/300/tz_driver/irq_register.c:243:26: warning: unused variable 's' [-Wunused-variable]
+        struct tz_driver_state *s = get_tz_drv_state();
+                                ^
+1 warning generated.
+1 warning generated.
+From https://github.com/TeraaBytee/AnyKernel3
+ * branch            master     -> FETCH_HEAD
+Switched to a new branch 'master'
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7mcurl --upload-file *zip https://transfer.sh[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C. PNeira_r.sh[Kcurl --upload-file *zip https://transfer.sh[C[1@s[1@u[1@d[1@o[1@ 
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ ls
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ r,[Km -rf [7mPNeira-Q-OSS-4.14.256-OVERThinking-11290907.zip[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CPNeira-Q-OSS-4.14.256-OVERThinking-11290907.zip
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7mhttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.sh[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shwhttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shghttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shehttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shthttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.sh https://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P/q-oss/build_gk.sh[1P/q-oss/build_gk.sh[1P/q-oss/build_gk.sh[1P/q-oss/build_gk.shr/q-oss/build_gk.sha/q-oss/build_gk.shw/q-oss/build_gk.sh
+[?2004l--2021-11-29 09:18:07--  https://github.com/indywidura/kernel_builder/raw/q-oss/build_gk.sh
+Resolving github.com (github.com)... 140.82.114.3
+Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_gk.sh [following]
+--2021-11-29 09:18:08--  https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_gk.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.111.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2525 (2.5K) [text/plain]
+Saving to: ‘build_gk.sh’
+
+     0K ..                                                    100% 43.0M=0s
+
+2021-11-29 09:18:08 (43.0 MB/s) - ‘build_gk.sh’ saved [2525/2525]
+
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ . [K[K[7mgit fetch https://github.com/TeraaBytee/begonia 27934d9475c8d90b1d699cf6fb423216803c1b2f && git cherry-pick 27934d9475c8d90[27m[7mb[27m[7m1d699cf6fb423216803c1b2f[27m[A]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git fetch https://github.com/TeraaBytee/begonia 27934d9475c8d90b1d699cf6fb423216803c1b2f && git cherry-pick 27934d9475c8d90b1d699cf6fb423216803c1b2f
+[?2004lFrom https://github.com/TeraaBytee/begonia
+ * branch                      27934d9475c8d90b1d699cf6fb423216803c1b2f -> FETCH_HEAD
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git add. && cherry-pick -- [Kcontinue
+[?2004lgit: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git add. && cherry-pick --continue[1@ 
+[?2004lcherry-pick: command not found
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7mgit add . && git cherry-pick --continue[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add . && git cherry-pick --continue
+[?2004l
