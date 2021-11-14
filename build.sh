@@ -1,37 +1,38 @@
 #! /bin/sh
 
 MainPath="$(pwd)"
-DTC="$(pwd)/../DragonTC"
+clang="$(pwd)/../clang"
 gcc64="$(pwd)/../gcc64"
 gcc="$(pwd)/../gcc"
 Any="$(pwd)/../AnyKernel3"
 
-MakeZip(){
-    if [ ! -d $Any ];then
-        git clone https://github.com/TeraaBytee/AnyKernel3 -b master $Any
+MakeZip() {
+    if [ ! -d $Any ]; then
+        git clone https://github.com/TeraaBytee/AnyKernel3 -b q-oss $Any
     else
         cd $Any
         git reset --hard
-        git fetch origin master
-        git checkout master
-        git reset --hard origin/master
+        git fetch origin q-oss
+        git checkout q-oss
+        git reset --hard origin/q-oss
     fi
     cd $Any
     cp -af $MainPath/out/arch/arm64/boot/Image.gz-dtb $Any
-    cp -af anykernel-real.sh anykernel.sh
     sed -i "s/kernel.string=.*/kernel.string=$KERNEL_NAME-$HeadCommit test by $KBUILD_BUILD_USER/g" anykernel.sh
-    zip -r $MainPath/"[$Compiler][Q-OSS]-$ZIP_KERNEL_VERSION-$KERNEL_NAME-$TIME.zip" * -x .git .git/**\* ./.git ./anykernel-real.sh ./.gitignore ./LICENSE ./README.md ./*.zip
+    zip -r9 $MainPath/"[$Compiler][Q-OSS]-$ZIP_KERNEL_VERSION-$KERNEL_NAME-$TIME.zip" * -x .git README.md *placeholder
     cd $MainPath
 }
 
-if [ ! -d $DTC ];then
-    git clone --depth=1 https://github.com/NusantaraDevs/DragonTC $DTC
+if [ ! -d $clang ]; then
+    git clone --depth=1 https://github.com/TeraaBytee/google-clang -b 11.0.2 $clang
 fi
-if [ ! -d $gcc64 ];then
-    git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 $gcc64
+
+if [ ! -d $gcc64 ]; then
+    git clone --depth=1 https://github.com/TeraaBytee/aarch64-linux-android-4.9 $gcc64
 fi
-if [ ! -d $gcc ];then
-    git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 $gcc
+
+if [ ! -d $gcc ]; then
+    git clone --depth=1 https://github.com/TeraaBytee/arm-linux-androideabi-4.9 $gcc
 fi
 
 HeadCommit="$(git log --pretty=format:'%h' -1)"
@@ -44,27 +45,24 @@ KERNEL_NAME=$(cat "$MainPath/arch/arm64/configs/$Defconfig" | grep "CONFIG_LOCAL
 ZIP_KERNEL_VERSION="4.14.$(cat "$MainPath/Makefile" | grep "SUBLEVEL =" | sed 's/SUBLEVEL = *//g')$(cat "$(pwd)/Makefile" | grep "EXTRAVERSION =" | sed 's/EXTRAVERSION = *//g')"
 TIME=$(date +"%m%d%H%M")
 
-Compiler=DragonTC
+Compiler=CLANG
 MAKE="./makeparallel"
-rm -rf out *.log
-exec 2> >(tee -a error.log >&2)
+rm -rf out
 BUILD_START=$(date +"%s")
-make -j$(nproc --all)  O=out ARCH=arm64 SUBARCH=arm64 $Defconfig
 
-if [ ! -z "$1" ] && [ "$1" == "regen" ] ;then
-    cp -af out/.config $MainPath/arch/arm64/configs/$Defconfig
-else
-    make -j$(nproc --all) O=out \
-                          PATH="$DTC/bin:$gcc64/bin:$gcc/bin:/usr/bin:$PATH" \
-                          LD_LIBRARY_PATH="$DTC/lib64:$LD_LIBRABRY_PATH" \
-                          CC=clang \
-                          LD=ld.lld \
-                          CROSS_COMPILE=aarch64-linux-android- \
-                          CROSS_COMPILE_ARM32=arm-linux-androideabi- \
-                          CLANG_TRIPLE=aarch64-linux-gnu-
-fi
+make  -j$(nproc --all)  O=out ARCH=arm64 SUBARCH=arm64 $Defconfig
+exec 2> >(tee -a out/error.log >&2)
 
-if [ -e $MainPath/out/arch/arm64/boot/Image.gz-dtb ];then
+make  -j$(nproc --all)  O=out \
+                        PATH="$clang/bin:$gcc64/bin:$gcc/bin:/usr/bin:$PATH" \
+                        LD_LIBRARY_PATH="$clang/lib64:$LD_LIBRABRY_PATH" \
+                        CC=clang \
+                        LD=ld.lld \
+                        CROSS_COMPILE=aarch64-linux-android- \
+                        CROSS_COMPILE_ARM32=arm-linux-androideabi- \
+                        CLANG_TRIPLE=aarch64-linux-gnu-
+
+if [ -e $MainPath/out/arch/arm64/boot/Image.gz-dtb ]; then
     BUILD_END=$(date +"%s")
     DIFF=$((BUILD_END - BUILD_START))
     MakeZip

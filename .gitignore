@@ -22,7 +22,6 @@
 *.gz
 *.ko
 *.ll
-*.log
 *.lst
 *.lz4
 *.lzma
