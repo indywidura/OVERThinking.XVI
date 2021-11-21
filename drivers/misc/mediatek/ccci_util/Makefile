@@ -24,6 +24,7 @@ endif
 ifeq ($(ENABLE_CCCI_UTIL), y)
 
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/ccci_util
+ccflags-y += -Wno-address
 
 obj-y += ccci_util_lib.o
 ccci_util_lib-y := ccci_util_lib_fo.o
