@@ -3009,7 +3009,8 @@ static void __mt_gpufreq_setup_opp_table(
 	if (g_segment_id == MT6785T_SEGMENT)
 		g_segment_max_opp_idx = 12;
 		g_segment_max_opp_idx = 0;
-GPU: set default to 850Mhz
+
+		g_segment_max_opp_idx = 3;
 	else if (g_segment_id == MT6785_SEGMENT)
 		g_segment_max_opp_idx = 9;
 	else if (g_segment_id == MT6783_SEGMENT)
