@@ -416,8 +416,7 @@ int do_lcm_vdo_lp_read(struct dsi_cmd_desc *cmd_tab, unsigned int count)
 	if (primary_get_state() == DISP_SLEPT) {
 		DISP_PR_INFO("primary display path is slept?? -- skip read\n");
 		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
+			cmd_tab[i].dlen = 0;
 		}
 		primary_display_manual_unlock();
 		return -1;
@@ -426,8 +425,7 @@ int do_lcm_vdo_lp_read(struct dsi_cmd_desc *cmd_tab, unsigned int count)
 	if (!primary_display_is_video_mode()) {
 		DISP_PR_INFO("Not support cmd mode\n");
 		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
+			cmd_tab[i].dlen = 0;
 		}
 		primary_display_manual_unlock();
 		return -1;
@@ -491,8 +489,7 @@ int do_lcm_vdo_lp_read(struct dsi_cmd_desc *cmd_tab, unsigned int count)
 			handle, CMDQ_DSI_RESET, 0);
 
 		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
+			cmd_tab[i].dlen = 0;
 		}
 		goto DISPTORY;
 	}
@@ -744,8 +741,7 @@ int do_lcm_vdo_lp_read_without_lock(struct dsi_cmd_desc *cmd_tab, unsigned int c
 	if (primary_get_state() == DISP_SLEPT) {
 		DISP_PR_INFO("primary display path is slept?? -- skip read\n");
 		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
+			cmd_tab[i].dlen = 0;
 		}
 		return -1;
 	}
@@ -753,8 +749,7 @@ int do_lcm_vdo_lp_read_without_lock(struct dsi_cmd_desc *cmd_tab, unsigned int c
 	if (!primary_display_is_video_mode()) {
 		DISP_PR_INFO("Not support cmd mode\n");
 		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
+			cmd_tab[i].dlen = 0;
 		}
 		return -1;
 	}
@@ -817,8 +812,7 @@ int do_lcm_vdo_lp_read_without_lock(struct dsi_cmd_desc *cmd_tab, unsigned int c
 			handle, CMDQ_DSI_RESET, 0);
 
 		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
+			cmd_tab[i].dlen = 0;
 		}
 		goto DISPTORY;
 	}
