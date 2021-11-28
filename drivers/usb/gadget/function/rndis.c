@@ -346,7 +346,7 @@ static int gen_ndis_query_resp(struct rndis_params *params, u32 OID, u8 *buf,
 	if (rndis_debug)
 		RNDIS_DBG("OID_GEN_MEDIA_CONNECT_STATUS, media_state %d\n",
 					params->media_state);
-		retval = 0;
+	retval = 0;
 		break;
 
 	case RNDIS_OID_GEN_PHYSICAL_MEDIUM:
