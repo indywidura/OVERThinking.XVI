@@ -26,10 +26,10 @@ MakeZip() {
 
 # Clone compiler
 if [ ! -d $GCC64 ]; then
-    git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 12 $GCC64
+    git clone --depth=1 https://github.com/mvaisakh/gcc-arm64 $GCC64
 fi
 if [ ! -d $GCC ]; then
-    git clone --depth=1 https://github.com/ZyCromerZ/arm-zyc-linux-gnueabi -b 12 $GCC
+    git clone --depth=1 https://github.com/mvaisakh/gcc-arm $GCC
 fi
 
 # Defined config
@@ -55,8 +55,13 @@ exec 2> >(tee -a out/error.log >&2)
 make  -j$(nproc --all)  O=out \
                         PATH=$GCC64/bin:$GCC/bin:/usr/bin:${PATH} \
                         LD=ld.lld \
-                        CROSS_COMPILE=aarch64-zyc-linux-gnu- \
-                        CROSS_COMPILE_ARM32=arm-zyc-linux-gnueabi-
+                        CROSS_COMPILE=aarch64-elf- \
+                        CROSS_COMPILE_ARM32=arm-eabi- \
+                        AR=aarch64-elf-ar \
+                        NM=llvm-nm \
+                        OBCOPY=llvm-objcopy \
+                        OBJDUMP=aarch64-elf-objdump \
+                        STRIP=aarch64-elf-strip
 
 if [ -e $MainPath/out/arch/arm64/boot/Image.gz-dtb ]; then
     BUILD_END=$(date +"%s")
