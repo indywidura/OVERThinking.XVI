@@ -11,4 +11,5 @@
 # GNU General Public License for more details.
 #
 
+ccflags-y += -Wno-address
 obj-y	+= mtk_ram_console.o

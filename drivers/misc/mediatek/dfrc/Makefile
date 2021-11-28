@@ -11,6 +11,7 @@
 # GNU General Public License for more details.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 #
+ccflags-y += -Wno-address
 
 obj-y += dfrc_driver.o
 

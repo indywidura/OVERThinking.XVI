@@ -12,6 +12,8 @@
 #
 
 #$(call all-subdir-src-or-makefile)
+
+
 MTK_PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM))
 subdir-ccflags-y += -Werror
 
