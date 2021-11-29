@@ -12,7 +12,6 @@ ccflags-y += -Wno-unused-value
 ccflags-y += -Wno-unused-result
 ccflags-y += -Wno-format
 ccflags-y += -Wno-parentheses
-ccflags-y += -Wno-address
 ccflags-y += $(call cc-option,-Wno-memset-elt-size)
 ccflags-y += -Wno-sizeof-pointer-memaccess
 
