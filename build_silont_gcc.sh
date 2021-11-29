@@ -20,16 +20,16 @@ MakeZip() {
     fi
     cp -af $MainPath/out/arch/arm64/boot/Image.gz-dtb $Any
     sed -i "s/kernel.string=.*/kernel.string=$KERNEL_NAME-$HeadCommit test by $KBUILD_BUILD_USER/g" anykernel.sh
-    zip -r9 $MainPath/"EvaGCC-Q-OSS-$ZIP_KERNEL_VERSION-$KERNEL_NAME-$TIME.zip" * -x .git README.md *placeholder
+    zip -r9 $MainPath/"$Compiler-Q-OSS-$ZIP_KERNEL_VERSION-$KERNEL_NAME-$TIME.zip" * -x .git README.md *placeholder
     cd $MainPath
 }
 
 # Clone compiler
 if [ ! -d $GCC64 ]; then
-    git clone --depth=1 https://github.com/mvaisakh/gcc-arm64 $GCC64
+    git clone --depth=1 https://github.com/silont-project/aarch64-elf-gcc -b arm64/11 $GCC64
 fi
 if [ ! -d $GCC ]; then
-    git clone --depth=1 https://github.com/mvaisakh/gcc-arm $GCC
+    git clone --depth=1 https://github.com/silont-project/arm-eabi-gcc -b arm/11 $GCC
 fi
 
 # Defined config

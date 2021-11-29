@@ -2,8 +2,7 @@
 
 # Defined path
 MainPath="$(pwd)"
-GCC64="$(pwd)/../GCC64"
-GCC="$(pwd)/../GCC"
+proton="$(pwd)/../proton"
 Any="$(pwd)/../AnyKernel3"
 
 # Make flashable zip
@@ -20,16 +19,13 @@ MakeZip() {
     fi
     cp -af $MainPath/out/arch/arm64/boot/Image.gz-dtb $Any
     sed -i "s/kernel.string=.*/kernel.string=$KERNEL_NAME-$HeadCommit test by $KBUILD_BUILD_USER/g" anykernel.sh
-    zip -r9 $MainPath/"EvaGCC-Q-OSS-$ZIP_KERNEL_VERSION-$KERNEL_NAME-$TIME.zip" * -x .git README.md *placeholder
+    zip -r9 $MainPath/"$Compiler-Q-OSS-$ZIP_KERNEL_VERSION-$KERNEL_NAME-$TIME.zip" * -x .git README.md *placeholder
     cd $MainPath
 }
 
 # Clone compiler
-if [ ! -d $GCC64 ]; then
-    git clone --depth=1 https://github.com/mvaisakh/gcc-arm64 $GCC64
-fi
-if [ ! -d $GCC ]; then
-    git clone --depth=1 https://github.com/mvaisakh/gcc-arm $GCC
+if [ ! -d $proton ]; then
+    git clone --depth=1 https://github.com/kdrag0n/proton-clang $proton
 fi
 
 # Defined config
@@ -44,7 +40,7 @@ ZIP_KERNEL_VERSION="4.14.$(cat "$MainPath/Makefile" | grep "SUBLEVEL =" | sed 's
 TIME=$(date +"%m%d%H%M")
 
 # Start building
-Compiler=GCC
+Compiler=Proton
 MAKE="./makeparallel"
 rm -rf out
 BUILD_START=$(date +"%s")
@@ -53,12 +49,17 @@ make  -j$(nproc --all)  O=out ARCH=arm64 SUBARCH=arm64 $Defconfig
 exec 2> >(tee -a out/error.log >&2)
 
 make  -j$(nproc --all)  O=out \
-                        PATH=$GCC64/bin:$GCC/bin:/usr/bin:${PATH} \
-                        AR=aarch64-elf-ar \
+                        PATH="$proton/bin:/usr/bin:$PATH" \
+                        LD_LIBRARY_PATH="$proton/lib:$LD_LIBRABRY_PATH" \
+                        CC=clang \
+                        AS=llvm-as \
+                        NM=llvm-nm \
+                        OBJCOPY=llvm-objcopy \
+                        OBJDUMP=llvm-objdump \
+                        STRIP=llvm-strip \
                         LD=ld.lld \
-                        OBJDUMP=aarch64-elf-objdump \
-                        CROSS_COMPILE=aarch64-elf- \
-                        CROSS_COMPILE_ARM32=arm-eabi-
+                        CROSS_COMPILE=aarch64-linux-gnu- \
+                        CROSS_COMPILE_ARM32=arm-linux-gnueabi-
 
 if [ -e $MainPath/out/arch/arm64/boot/Image.gz-dtb ]; then
     BUILD_END=$(date +"%s")

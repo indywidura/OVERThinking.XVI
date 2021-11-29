@@ -32,6 +32,7 @@ static ssize_t kernfs_fop_write(struct file *file, const char __user *user_buf,
 ../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2248:4: warning: 'snprintf' size argument is too large; destination buffer has size 32, but size argument is 4096 [-Wfortify-source]
                         snprintf(mpcriteria, PAGE_SIZE, "novatek-mp-criteria-%04X", ts->nvt_pid);
                         ^
+6 warnings generated.
 ../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:15: warning: comparing a pointer to a null character constant; did you mean to compare to NULL? [-Wpointer-compare]
                 if  ((cs == '\0') || (ct == '\0'))
                             ^~~~
@@ -40,7 +41,6 @@ static ssize_t kernfs_fop_write(struct file *file, const char __user *user_buf,
                 if  ((cs == '\0') || (ct == '\0'))
                                             ^~~~
                                             (void *)0
-6 warnings generated.
 2 warnings generated.
 ../drivers/mmc/host/mediatek/ComboA/sd.c:5475:16: warning: unused variable 'flags' [-Wunused-variable]
         unsigned long flags;
@@ -89,49 +89,373 @@ extern void *memcpy(void *, const void *, __kernel_size_t);
 ../drivers/misc/mediatek/teei/300/tz_driver/include/teei_id.h:169:21: note: passing argument to parameter 'end' here
                                                 unsigned long end)
                                                               ^
+1 warning generated.
 ../drivers/misc/mediatek/teei/300/tz_driver/irq_register.c:243:26: warning: unused variable 's' [-Wunused-variable]
         struct tz_driver_state *s = get_tz_drv_state();
                                 ^
 1 warning generated.
-1 warning generated.
 From https://github.com/TeraaBytee/AnyKernel3
  * branch            master     -> FETCH_HEAD
-Switched to a new branch 'master'
-[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7mcurl --upload-file *zip https://transfer.sh[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C. PNeira_r.sh[Kcurl --upload-file *zip https://transfer.sh[C[1@s[1@u[1@d[1@o[1@ 
-[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ ls
-[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ r,[Km -rf [7mPNeira-Q-OSS-4.14.256-OVERThinking-11290907.zip[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CPNeira-Q-OSS-4.14.256-OVERThinking-11290907.zip
-[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7mhttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.sh[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shwhttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shghttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shehttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.shthttps://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.sh https://github.com/indywidura/kernel_builder/blob/q-oss/build_gk.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P/q-oss/build_gk.sh[1P/q-oss/build_gk.sh[1P/q-oss/build_gk.sh[1P/q-oss/build_gk.shr/q-oss/build_gk.sha/q-oss/build_gk.shw/q-oss/build_gk.sh
-[?2004l--2021-11-29 09:18:07--  https://github.com/indywidura/kernel_builder/raw/q-oss/build_gk.sh
-Resolving github.com (github.com)... 140.82.114.3
-Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+Switched to branch 'master'
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ rm-[K -rf build_eva.g[K[K_gcc.sh
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ wget [7mhttps://github.com/indywidura/kernel_builder/tree/q-oss[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chttps://github.com/indywidura/kernel_builder/tree/q-oss[1P/q-oss[1P/q-oss[1P/q-oss[1P/q-osst/q-oss[1P/q-ossr/q-ossa/q-ossw/q-oss[C[C[C[C[C[C/build_evagc[K[K_gcc.sh
+[?2004l--2021-11-29 11:21:11--  https://github.com/indywidura/kernel_builder/raw/q-oss/build_eva_gcc.sh
+Resolving github.com (github.com)... 192.30.255.112
+Connecting to github.com (github.com)|192.30.255.112|:443... connected.
 HTTP request sent, awaiting response... 302 Found
-Location: https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_gk.sh [following]
---2021-11-29 09:18:08--  https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_gk.sh
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.111.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+Location: https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_eva_gcc.sh [following]
+--2021-11-29 11:21:11--  https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_eva_gcc.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 2525 (2.5K) [text/plain]
-Saving to: ‘build_gk.sh’
+Length: 2404 (2.3K) [text/plain]
+Saving to: ‘build_eva_gcc.sh’
 
-     0K ..                                                    100% 43.0M=0s
+     0K ..                                                    100% 36.5M=0s
 
-2021-11-29 09:18:08 (43.0 MB/s) - ‘build_gk.sh’ saved [2525/2525]
+2021-11-29 11:21:11 (36.5 MB/s) - ‘build_eva_gcc.sh’ saved [2404/2404]
 
-[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ . [K[K[7mgit fetch https://github.com/TeraaBytee/begonia 27934d9475c8d90b1d699cf6fb423216803c1b2f && git cherry-pick 27934d9475c8d90[27m[7mb[27m[7m1d699cf6fb423216803c1b2f[27m[A]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git fetch https://github.com/TeraaBytee/begonia 27934d9475c8d90b1d699cf6fb423216803c1b2f && git cherry-pick 27934d9475c8d90b1d699cf6fb423216803c1b2f
-[?2004lFrom https://github.com/TeraaBytee/begonia
- * branch                      27934d9475c8d90b1d699cf6fb423216803c1b2f -> FETCH_HEAD
-The previous cherry-pick is now empty, possibly due to conflict resolution.
-If you wish to commit it anyway, use:
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ . build_eva_gcc.sh
+[?2004l../arch/arm64/kernel/traps.c: In function 'dump_backtrace':
+../arch/arm64/kernel/traps.c:105:23: warning: unused variable 'prev_fp' [-Wunused-variable]
+  105 |         unsigned long prev_fp = 0;
+      |                       ^~~~~~~
+../kernel/extable.c: In function 'sort_main_extable':
+../kernel/extable.c:47:59: warning: comparison between two arrays [-Warray-compare]
+   47 |         if (main_extable_sort_needed && __stop___ex_table > __start___ex_table) {
+      |                                                           ^
+../kernel/extable.c:47:59: note: use '&__stop___ex_table[0] > &__start___ex_table[0]' to compare the addresses
+../kernel/sched/core.c: In function '__schedule_bug':
+../kernel/sched/core.c:4614:13: warning: unused variable 'i' [-Wunused-variable]
+ 4614 |         int i = 0;
+      |             ^
+../kernel/sched/core.c: In function 'sched_init':
+../kernel/sched/core.c:7883:30: warning: the comparison will always evaluate as 'false' for the address of 'cpu_isolated_map' will never be NULL [-Waddress]
+ 7883 |         if (cpu_isolated_map == NULL)
+      |                              ^~
+../kernel/sched/core.c:117:15: note: 'cpu_isolated_map' declared here
+  117 | cpumask_var_t cpu_isolated_map;
+      |               ^~~~~~~~~~~~~~~~
+../kernel/profile.c: In function 'profile_dead_cpu':
+../kernel/profile.c:339:27: warning: the comparison will always evaluate as 'true' for the address of 'prof_cpu_mask' will never be NULL [-Waddress]
+  339 |         if (prof_cpu_mask != NULL)
+      |                           ^~
+../kernel/profile.c:49:22: note: 'prof_cpu_mask' declared here
+   49 | static cpumask_var_t prof_cpu_mask;
+      |                      ^~~~~~~~~~~~~
+../kernel/profile.c: In function 'profile_online_cpu':
+../kernel/profile.c:376:27: warning: the comparison will always evaluate as 'true' for the address of 'prof_cpu_mask' will never be NULL [-Waddress]
+  376 |         if (prof_cpu_mask != NULL)
+      |                           ^~
+../kernel/profile.c:49:22: note: 'prof_cpu_mask' declared here
+   49 | static cpumask_var_t prof_cpu_mask;
+      |                      ^~~~~~~~~~~~~
+../kernel/profile.c: In function 'profile_tick':
+../kernel/profile.c:406:47: warning: the comparison will always evaluate as 'true' for the address of 'prof_cpu_mask' will never be NULL [-Waddress]
+  406 |         if (!user_mode(regs) && prof_cpu_mask != NULL &&
+      |                                               ^~
+../kernel/profile.c:49:22: note: 'prof_cpu_mask' declared here
+   49 | static cpumask_var_t prof_cpu_mask;
+      |                      ^~~~~~~~~~~~~
+../fs/kernfs/file.c: In function 'kernfs_fop_write':
+../fs/kernfs/file.c:338:1: warning: the frame size of 4112 bytes is larger than 2800 bytes [-Wframe-larger-than=]
+  338 | }
+      | ^
+../lib/dynamic_debug.c: In function 'dynamic_debug_init':
+../lib/dynamic_debug.c:1124:31: warning: comparison between two arrays [-Warray-compare]
+ 1124 |         if (__start___verbose == __stop___verbose) {
+      |                               ^~
+../lib/dynamic_debug.c:1124:31: note: use '&__start___verbose[0] == &__stop___verbose[0]' to compare the addresses
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c: In function 'fts_strncmp':
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:26: warning: comparison between pointer and zero character constant [-Wpointer-compare]
+  135 |                 if  ((cs == '\0') || (ct == '\0'))
+      |                          ^~
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:23: note: did you mean to dereference the pointer?
+  135 |                 if  ((cs == '\0') || (ct == '\0'))
+      |                       ^
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:42: warning: comparison between pointer and zero character constant [-Wpointer-compare]
+  135 |                 if  ((cs == '\0') || (ct == '\0'))
+      |                                          ^~
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:39: note: did you mean to dereference the pointer?
+  135 |                 if  ((cs == '\0') || (ct == '\0'))
+      |                                       ^
+../fs/proc/cmdline.c: In function 'check_flag':
+../fs/proc/cmdline.c:59:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   59 |         bool ret = r_len == v_len && !memcmp(r_val, val, r_len);
+      |         ^~~~
+../drivers/md/dm-bow.c:15: warning: "SECTOR_SIZE" redefined
+   15 | #define SECTOR_SIZE 512
+      | 
+In file included from ../include/linux/device-mapper.h:12,
+                 from ../drivers/md/dm.h:14,
+                 from ../drivers/md/dm-bow.c:7:
+../include/linux/blkdev.h:1031: note: this is the location of the previous definition
+ 1031 | #define SECTOR_SIZE (1 << SECTOR_SHIFT)
+      | 
+../drivers/mmc/host/mediatek/ComboA/sd.c: In function 'msdc_runtime_suspend':
+../drivers/mmc/host/mediatek/ComboA/sd.c:5475:23: warning: unused variable 'flags' [-Wunused-variable]
+ 5475 |         unsigned long flags;
+      |                       ^~~~~
+../drivers/staging/android/ion/mtk/ion_mm_heap.c: In function 'ion_mm_heap_phys':
+../drivers/staging/android/ion/mtk/ion_mm_heap.c:715:7: warning: multi-line comment [-Wcomment]
+  715 | #if 1 //defined(CONFIG_MTK_IOMMU_PGTABLE_EXT) && \
+      |       ^
+In file included from ../drivers/staging/android/ion/mtk/ion_profile.c:13:
+../drivers/staging/android/ion/mtk/ion_profile.c: In function 'ion_profile_init':
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:62:9: note: in expansion of macro 'mmprofile_enable_event'
+   62 |         mmprofile_enable_event(ion_mmp_events[PROFILE_ALLOC], 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:63:9: note: in expansion of macro 'mmprofile_enable_event'
+   63 |         mmprofile_enable_event(ion_mmp_events[PROFILE_MAP_KERNEL], 0);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:64:9: note: in expansion of macro 'mmprofile_enable_event'
+   64 |         mmprofile_enable_event(ion_mmp_events[PROFILE_MAP_USER], 0);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:65:9: note: in expansion of macro 'mmprofile_enable_event'
+   65 |         mmprofile_enable_event(ion_mmp_events[PROFILE_DMA_CLEAN_ALL], 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:66:9: note: in expansion of macro 'mmprofile_enable_event'
+   66 |         mmprofile_enable_event(ion_mmp_events[PROFILE_DMA_FLUSH_ALL], 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:67:9: note: in expansion of macro 'mmprofile_enable_event'
+   67 |         mmprofile_enable_event(ion_mmp_events[PROFILE_DMA_INVALID_ALL], 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:68:9: note: in expansion of macro 'mmprofile_enable_event'
+   68 |         mmprofile_enable_event(ion_mmp_events[PROFILE_MVA_ALLOC], 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/staging/android/ion/mtk/ion_profile.h:46:37: warning: statement with no effect [-Wunused-value]
+   46 | #define mmprofile_enable_event(...) 0
+      |                                     ^
+../drivers/staging/android/ion/mtk/ion_profile.c:69:9: note: in expansion of macro 'mmprofile_enable_event'
+   69 |         mmprofile_enable_event(ion_mmp_events[PROFILE_MVA_DEALLOC], 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:109:6: warning: "CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF" is not defined, evaluates to 0 [-Wundef]
+  109 | #if (CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF && CONFIG_MTPROF)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c: In function 'set_soter_version':
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:752:29: warning: passing argument 2 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+  752 |         memcpy(&versionlen, message_buff, sizeof(unsigned int));
+      |                             ^~~~~~~~~~~~
+      |                             |
+      |                             long unsigned int
+In file included from ../include/linux/string.h:19,
+                 from ../arch/arm64/include/asm/processor.h:37,
+                 from ../arch/arm64/include/asm/spinlock.h:21,
+                 from ../include/linux/spinlock.h:88,
+                 from ../include/linux/seqlock.h:36,
+                 from ../include/linux/time.h:6,
+                 from ../include/linux/ktime.h:24,
+                 from ../drivers/misc/mediatek/teei/300/common/include/imsg_log.h:41,
+                 from ../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:17:
+../arch/arm64/include/asm/string.h:46:29: note: expected 'const void *' but argument is of type 'long unsigned int'
+   46 | extern void *memcpy(void *, const void *, __kernel_size_t);
+      |                             ^~~~~~~~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:758:46: warning: passing argument 2 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+  758 |                 memcpy(version, message_buff + 4, versionlen);
+      |                                 ~~~~~~~~~~~~~^~~
+      |                                              |
+      |                                              long unsigned int
+In file included from ../include/linux/string.h:19,
+                 from ../arch/arm64/include/asm/processor.h:37,
+                 from ../arch/arm64/include/asm/spinlock.h:21,
+                 from ../include/linux/spinlock.h:88,
+                 from ../include/linux/seqlock.h:36,
+                 from ../include/linux/time.h:6,
+                 from ../include/linux/ktime.h:24,
+                 from ../drivers/misc/mediatek/teei/300/common/include/imsg_log.h:41,
+                 from ../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:17:
+../arch/arm64/include/asm/string.h:46:29: note: expected 'const void *' but argument is of type 'long unsigned int'
+   46 | extern void *memcpy(void *, const void *, __kernel_size_t);
+      |                             ^~~~~~~~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c: In function 'teei_client_init':
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:2153:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2153 |         struct sched_param param = {.sched_priority = 50 };
+      |         ^~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:109:6: warning: "CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF" is not defined, evaluates to 0 [-Wundef]
+  109 | #if (CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF && CONFIG_MTPROF)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/backward_driver.c: In function '__reetime_handle':
+../drivers/misc/mediatek/teei/300/tz_driver/backward_driver.c:203:59: warning: passing argument 2 of 'Invalidate_Dcache_By_Area' makes integer from pointer without a cast [-Wint-conversion]
+  203 |         Invalidate_Dcache_By_Area((unsigned long)ptr, ptr + 4);
+      |                                                       ~~~~^~~
+      |                                                           |
+      |                                                           void *
+In file included from ../drivers/misc/mediatek/teei/300/tz_driver/backward_driver.c:23:
+../drivers/misc/mediatek/teei/300/tz_driver/include/teei_id.h:169:63: note: expected 'long unsigned int' but argument is of type 'void *'
+  169 |                                                 unsigned long end)
+      |                                                 ~~~~~~~~~~~~~~^~~
+../drivers/misc/mediatek/teei/300/tz_driver/irq_register.c: In function 'ut_drv_irq_handler':
+../drivers/misc/mediatek/teei/300/tz_driver/irq_register.c:243:33: warning: unused variable 's' [-Wunused-variable]
+  243 |         struct tz_driver_state *s = get_tz_drv_state();
+      |                                 ^
+../drivers/misc/mediatek/teei/300/tz_driver/teei_capi.c: In function '__teei_client_decode_uint32':
+../drivers/misc/mediatek/teei/300/tz_driver/teei_capi.c:2025:68: warning: the comparison will always evaluate as 'false' for the pointer operand in '(u32 *)dec_context->ker_res_data_addr + (sizetype)dec_context->dec_offset' must not be NULL [-Waddress]
+ 2025 |                                         + dec_context->dec_offset) == NULL))
+      |                                                                    ^~
+Switched to branch 'q-oss'
+From https://github.com/TeraaBytee/AnyKernel3
+ * branch            q-oss      -> FETCH_HEAD
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ ls
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7mcurl --upload-file *zip https://transfer.sh[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pcurl --upload-file *zip https://transfer.s[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksudo [7mcurl --upload-file *zip https://transfer.sh[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl --upload-file *zip https://transfer.sh
+[?2004l  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: PNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ sudo curl --upload-file *zip https://transfer.sh/Pneri[7mPNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip [27m[1PPNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mPNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip [27mPNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip  [K[7mhttps://transfer.sh[27mhttps://transfer.sh
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7msudo curl --upload-file[27msudo curl --upload-file [C[7mEvaGCC-Q-OSS-4.14.256-OVERThinking-11291121.zip[27mEvaGCC-Q-OSS-4.14.256-OVERThinking-11291121.zip [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ko curl --upload-file PNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip https://transfer.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ko curl --upload-file PNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip https://transfer.sh[1P[1P[1P[1P[1P[1P[1P[1@E[1@V[1@A[1P[1P[1@v[1@a[1@G[1@C[1@C[C[1@-[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lcurl: option --upload-fileEvaGCC-Q-OSS-4.14.256-OVERThinking-11291108.zip: is unknown
+curl: try 'curl --help' or 'curl --manual' for more information
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ sudo curl --upload-fileEvaGCC-Q-OSS-4.14.256-OVERThinking-11291108.zip https://transfer.sh[1P[1@C[1@ 
+[?2004lcurl: Can't open 'EvaGCC-Q-OSS-4.14.256-OVERThinking-11291108.zip'!
+curl: try 'curl --help' or 'curl --manual' for more information
+curl: (26) Failed to open/read local data from file/application
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ sudo curl --upload-file EvaGCC-Q-OSS-4.14.256-OVERThinking-11291108.zip https://transfer.sh[1P[1P[1P[1P[1P[1P[1P[1P[8@[7m11291121[27m11291121
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ sudo curl --upload-file EvaGCC-Q-OSS-4.14.256-OVERThinking-11291121.zip https://transfer.sh08[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ PNeira[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[43P*[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K. build_eva_gcc.shwget https://github.com/indywidura/kernel_builder/raw/q-oss/build_eva_gcc.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -rf build_eva_gcc.sh[K[10P. PNeira_r.sh[3@nano[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd over/Q/rushnano arch/arm64/configs/begonia_user_defconfig[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd mt6785ls[Kcd xiaomils[Kcd xiaomils[Kcd mt6785ls[Knano arch/arm64/configs/begonia_user_defconfig[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd over/Q/rush[Kls[Knano PNeira_r.sh[3P.[C[C[C[C[C[C[C[C[C[C[C[Crm -rf build_eva_gcc.shwget https://github.com/indywidura/kernel_builder/raw/q-oss/build_eva_gcc.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C. build_eva_gcc.sh[Kwget https://github.com/indywidura/kernel_builder/raw/q-oss/build_eva_gcc.sh[1P.sh[1P.sh[1P.sh[1P.sh[1P.sh[1P.sh[1P.shp.shro.shto.shn.sh
+[?2004l--2021-11-29 11:38:10--  https://github.com/indywidura/kernel_builder/raw/q-oss/build_proton.sh
+Resolving github.com (github.com)... 140.82.112.3
+Connecting to github.com (github.com)|140.82.112.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_proton.sh [following]
+--2021-11-29 11:38:11--  https://raw.githubusercontent.com/indywidura/kernel_builder/q-oss/build_proton.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2534 (2.5K) [text/plain]
+Saving to: ‘build_proton.sh’
 
-    git commit --allow-empty
+     0K ..                                                    100% 38.3M=0s
 
-Otherwise, please use 'git cherry-pick --skip'
-[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git add. && cherry-pick -- [Kcontinue
-[?2004lgit: 'add.' is not a git command. See 'git --help'.
+2021-11-29 11:38:11 (38.3 MB/s) - ‘build_proton.sh’ saved [2534/2534]
 
-The most similar command is
-	add
-[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git add. && cherry-pick --continue[1@ 
-[?2004lcherry-pick: command not found
-[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ [7mgit add . && git cherry-pick --continue[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add . && git cherry-pick --continue
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ . build_proton.sh
+[?2004lCloning into '/home/henka/over/Q/rush/../proton'...
+Updating files:  32% (365/1110)Updating files:  33% (367/1110)Updating files:  33% (377/1110)Updating files:  34% (378/1110)Updating files:  35% (389/1110)Updating files:  35% (395/1110)Updating files:  36% (400/1110)Updating files:  36% (405/1110)Updating files:  37% (411/1110)Updating files:  37% (421/1110)Updating files:  38% (422/1110)Updating files:  39% (433/1110)Updating files:  39% (434/1110)Updating files:  40% (444/1110)Updating files:  41% (456/1110)Updating files:  41% (463/1110)Updating files:  42% (467/1110)Updating files:  43% (478/1110)Updating files:  44% (489/1110)Updating files:  45% (500/1110)Updating files:  46% (511/1110)Updating files:  47% (522/1110)Updating files:  48% (533/1110)Updating files:  49% (544/1110)Updating files:  50% (555/1110)Updating files:  51% (567/1110)Updating files:  52% (578/1110)Updating files:  53% (589/1110)Updating files:  54% (600/1110)Updating files:  55% (611/1110)Updating files:  56% (622/1110)Updating files:  57% (633/1110)Updating files:  58% (644/1110)Updating files:  59% (655/1110)Updating files:  59% (662/1110)Updating files:  60% (666/1110)Updating files:  61% (678/1110)Updating files:  62% (689/1110)Updating files:  63% (700/1110)Updating files:  64% (711/1110)Updating files:  65% (722/1110)Updating files:  66% (733/1110)Updating files:  67% (744/1110)Updating files:  68% (755/1110)Updating files:  69% (766/1110)Updating files:  69% (771/1110)Updating files:  70% (777/1110)Updating files:  71% (789/1110)Updating files:  72% (800/1110)Updating files:  73% (811/1110)Updating files:  74% (822/1110)Updating files:  75% (833/1110)Updating files:  76% (844/1110)Updating files:  77% (855/1110)Updating files:  78% (866/1110)Updating files:  79% (877/1110)Updating files:  80% (888/1110)Updating files:  81% (900/1110)Updating files:  82% (911/1110)Updating files:  83% (922/1110)Updating files:  84% (933/1110)Updating files:  85% (944/1110)Updating files:  86% (955/1110)Updating files:  87% (966/1110)Updating files:  88% (977/1110)Updating files:  89% (988/1110)Updating files:  90% (999/1110)Updating files:  91% (1011/1110)Updating files:  92% (1022/1110)Updating files:  93% (1033/1110)Updating files:  94% (1044/1110)Updating files:  95% (1055/1110)Updating files:  96% (1066/1110)Updating files:  97% (1077/1110)Updating files:  98% (1088/1110)Updating files:  99% (1099/1110)Updating files: 100% (1110/1110)Updating files: 100% (1110/1110), done.
+../arch/arm64/kernel/traps.c:105:16: warning: unused variable 'prev_fp' [-Wunused-variable]
+        unsigned long prev_fp = 0;
+                      ^
+1 warning generated.
+../kernel/sched/core.c:4614:6: warning: unused variable 'i' [-Wunused-variable]
+        int i = 0;
+            ^
+1 warning generated.
+../fs/kernfs/file.c:273:16: warning: stack frame size of 4176 bytes in function 'kernfs_fop_write' [-Wframe-larger-than=]
+static ssize_t kernfs_fop_write(struct file *file, const char __user *user_buf,
+               ^
+1 warning generated.
+../fs/proc/cmdline.c:59:7: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+        bool ret = r_len == v_len && !memcmp(r_val, val, r_len);
+             ^
+1 warning generated.
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:1703:2: warning: 'snprintf' size argument is too large; destination buffer has size 64, but size argument is 4096 [-Wfortify-source]
+        snprintf(mp_setting_criteria_csv_filename, PAGE_SIZE, "NT36xxx_MP_Setting_Criteria_%04X.csv", ts->nvt_pid);
+        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:1718:4: warning: 'snprintf' size argument is too large; destination buffer has size 32, but size argument is 4096 [-Wfortify-source]
+                        snprintf(mpcriteria, PAGE_SIZE, "novatek-mp-criteria-%04X", ts->nvt_pid);
+                        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2111:2: warning: 'snprintf' size argument is too large; destination buffer has size 64, but size argument is 4096 [-Wfortify-source]
+        snprintf(mp_setting_criteria_csv_filename, PAGE_SIZE, "NT36xxx_MP_Setting_Criteria_%04X.csv", ts->nvt_pid);
+        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2126:4: warning: 'snprintf' size argument is too large; destination buffer has size 32, but size argument is 4096 [-Wfortify-source]
+                        snprintf(mpcriteria, PAGE_SIZE, "novatek-mp-criteria-%04X", ts->nvt_pid);
+                        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2233:2: warning: 'snprintf' size argument is too large; destination buffer has size 64, but size argument is 4096 [-Wfortify-source]
+        snprintf(mp_setting_criteria_csv_filename, PAGE_SIZE, "NT36xxx_MP_Setting_Criteria_%04X.csv", ts->nvt_pid);
+        ^
+../drivers/input/touchscreen/NT36672A/nt36xxx_mp_ctrlram.c:2248:4: warning: 'snprintf' size argument is too large; destination buffer has size 32, but size argument is 4096 [-Wfortify-source]
+                        snprintf(mpcriteria, PAGE_SIZE, "novatek-mp-criteria-%04X", ts->nvt_pid);
+                        ^
+6 warnings generated.
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:15: warning: comparing a pointer to a null character constant; did you mean to compare to NULL? [-Wpointer-compare]
+                if  ((cs == '\0') || (ct == '\0'))
+                            ^~~~
+                            (void *)0
+../drivers/input/touchscreen/fts8719/focaltech_test/focaltech_test_ini.c:135:31: warning: comparing a pointer to a null character constant; did you mean to compare to NULL? [-Wpointer-compare]
+                if  ((cs == '\0') || (ct == '\0'))
+                                            ^~~~
+                                            (void *)0
+2 warnings generated.
+../drivers/md/dm-bow.c:15:9: warning: 'SECTOR_SIZE' macro redefined [-Wmacro-redefined]
+#define SECTOR_SIZE 512
+        ^
+../include/linux/blkdev.h:1031:9: note: previous definition is here
+#define SECTOR_SIZE (1 << SECTOR_SHIFT)
+        ^
+1 warning generated.
+../drivers/mmc/host/mediatek/ComboA/sd.c:5475:16: warning: unused variable 'flags' [-Wunused-variable]
+        unsigned long flags;
+                      ^
+1 warning generated.
+../drivers/thermal/thermal_core.c:1212:14: warning: 'snprintf' size argument is too large; destination buffer has size 128, but size argument is 4096 [-Wfortify-source]
+       ret = snprintf(boost_buf, PAGE_SIZE, buf);
+             ^
+../drivers/thermal/thermal_core.c:1328:8: warning: 'snprintf' size argument is too large; destination buffer has size 128, but size argument is 4096 [-Wfortify-source]
+       snprintf(board_sensor_temp, PAGE_SIZE, buf);
+       ^
+2 warnings generated.
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:109:6: warning: 'CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF' is not defined, evaluates to 0 [-Wundef]
+#if (CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF && CONFIG_MTPROF)
+     ^
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:752:22: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *' [-Wint-conversion]
+        memcpy(&versionlen, message_buff, sizeof(unsigned int));
+                            ^~~~~~~~~~~~
+../arch/arm64/include/asm/string.h:46:41: note: passing argument to parameter here
+extern void *memcpy(void *, const void *, __kernel_size_t);
+                                        ^
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:758:19: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *' [-Wint-conversion]
+                memcpy(version, message_buff + 4, versionlen);
+                                ^~~~~~~~~~~~~~~~
+../arch/arm64/include/asm/string.h:46:41: note: passing argument to parameter here
+extern void *memcpy(void *, const void *, __kernel_size_t);
+                                        ^
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:2153:21: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+        struct sched_param param = {.sched_priority = 50 };
+                           ^
+4 warnings generated.
+../drivers/misc/mediatek/teei/300/tz_driver/teei_client_main.c:109:6: warning: 'CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF' is not defined, evaluates to 0 [-Wundef]
+#if (CONFIG_MICROTRUST_TZ_DRIVER_MTK_BOOTPROF && CONFIG_MTPROF)
+     ^
+1 warning generated.
+../drivers/misc/mediatek/teei/300/tz_driver/backward_driver.c:203:48: warning: incompatible pointer to integer conversion passing 'void *' to parameter of type 'unsigned long' [-Wint-conversion]
+        Invalidate_Dcache_By_Area((unsigned long)ptr, ptr + 4);
+                                                      ^~~~~~~
+../drivers/misc/mediatek/teei/300/tz_driver/include/teei_id.h:169:21: note: passing argument to parameter 'end' here
+                                                unsigned long end)
+                                                              ^
+1 warning generated.
+../drivers/misc/mediatek/teei/300/tz_driver/irq_register.c:243:26: warning: unused variable 's' [-Wunused-variable]
+        struct tz_driver_state *s = get_tz_drv_state();
+                                ^
+1 warning generated.
+Already on 'q-oss'
+From https://github.com/TeraaBytee/AnyKernel3
+ * branch            q-oss      -> FETCH_HEAD
+[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ . build_proton.shwget https://github.com/indywidura/kernel_builder/raw/q-oss/build_proton.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo curl --upload-file EvaGCC-Q-OSS-4.14.256-OVERThinking-11291121.zip https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.sh[1P https://transfer.shwget https://github.com/indywidura/kernel_builder/raw/q-oss/build_proton.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[31Psudo curl --upload-file  https://transfer.shEvaGCC-Q-OSS-4.14.256-OVERThinking-11291108.zip https://transfer.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ PNeira[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[43P*[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ ls. build_proton.shls[K[Kls. build_proton.shwget https://github.com/indywidura/kernel_builder/raw/q-oss/build_proton.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[31Psudo curl --upload-file  https://transfer.sh[C[C https://transfer.sh[47@[7mProton-Q-OSS-4.14.256-OVERThinking-11291140.zip[27mProton-Q-OSS-4.14.256-OVERThinking-11291140.zip[C[1Phttps://transfer.sh
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ rm rf[K[K-rf [7mEvaGCC-Q-OSS-4.14.256-OVERThinking-11291121.zip[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CEvaGCC-Q-OSS-4.14.256-OVERThinking-11291121.zip
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ rm -rf EvaGCC-Q-OSS-4.14.256-OVERThinking-11291121.zip[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Krm -rf [7mPNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CPNeira-Q-OSS-4.14.256-OVERThinking-11291108.zip
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ rm -rf [7mProton-Q-OSS-4.14.256-OVERThinking-11291140.zip[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CProton-Q-OSS-4.14.256-OVERThinking-11291140.zip
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ ls
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git init
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git comm[K[K[K[K[K[K[K[K[7mgit commit -m "first commit"[27mgit commit -m "first commit"[C[C[C[C[1Pt"[C[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"u"p"d"a"t"e"[C
+[?2004l[?2004h]0;henka@kintil: ~/over/Q/rush[01;32mhenka@kintil[00m:[01;34m~/over/Q/rush[00m$ git add.[K .
 [?2004l
