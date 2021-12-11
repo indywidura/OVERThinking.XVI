@@ -11,7 +11,7 @@ gcc="$(pwd)/../gcc"
 Any="$(pwd)/../AnyKernel3"
 
 # Upload to telegram
-UT=0
+UT=1
 if [ $UT = 1 ]; then
     BOT_TOKEN="5027259955:AAFNJearSwG0gmwYhBRRdMkWdVxx2FFui-c"
     CHAT_ID="-1001584611536"
