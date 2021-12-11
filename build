@@ -14,7 +14,7 @@ Any="$(pwd)/../AnyKernel3"
 UT=1
 if [ $UT = 1 ]; then
     BOT_TOKEN="5027259955:AAFNJearSwG0gmwYhBRRdMkWdVxx2FFui-c"
-    CHAT_ID="-1001584611536"
+    CHAT_ID="-788015308"
 fi
 
 msg() {
