@@ -13,8 +13,8 @@ Any="$(pwd)/../AnyKernel3"
 # Upload to telegram
 UT=0
 if [ $UT = 1 ]; then
-    BOT_TOKEN=""
-    CHAT_ID=""
+    BOT_TOKEN="1743572055:AAFrucA6-YfaxQUeCwCFrAPw6LEMQUITSxQ"
+    CHAT_ID="-1001584611536"
 fi
 
 msg() {
@@ -142,8 +142,8 @@ Clone_DTC() {
 HeadCommit="$(git log --pretty=format:'%h' -1)"
 export ARCH="arm64"
 export SUBARCH="arm64"
-export KBUILD_BUILD_USER="TeraaBytee"
-export KBUILD_BUILD_HOST="$(hostname)"
+export KBUILD_BUILD_USER="Sayonara"
+export KBUILD_BUILD_HOST="OVER-XVI"
 Defconfig="begonia_user_defconfig"
 KERNEL_NAME=$(cat "$MainPath/arch/arm64/configs/$Defconfig" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
 ZIP_KERNEL_VERSION="4.14.$(cat "$MainPath/Makefile" | grep "SUBLEVEL =" | sed 's/SUBLEVEL = *//g')$(cat "$(pwd)/Makefile" | grep "EXTRAVERSION =" | sed 's/EXTRAVERSION = *//g')"
@@ -230,7 +230,7 @@ End() {
         if [ $UT = 1 ]; then
             TIME=$(echo "Build success in : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)")
             FILE=$ZIP
-            Caption="$TIME @TeraaBytee"
+            Caption="$TIME @OVERThinkingBABY"
             Upload
         else
             echo "Build success in : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)"
@@ -241,7 +241,7 @@ End() {
         if [ $UT = 1 ]; then
             TIME=$(echo "Build fail in : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)")
             FILE="out/error.log"
-            Caption="$TIME Check this @TeraaBytee"
+            Caption="$TIME Check this @OVERThinkingBABY"
             Upload
         else
             echo "Build fail in : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)"
