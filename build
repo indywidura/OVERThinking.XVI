@@ -13,7 +13,7 @@ Any="$(pwd)/../AnyKernel3"
 # Upload to telegram
 UT=0
 if [ $UT = 1 ]; then
-    BOT_TOKEN="1743572055:AAFrucA6-YfaxQUeCwCFrAPw6LEMQUITSxQ"
+    BOT_TOKEN="5027259955:AAFNJearSwG0gmwYhBRRdMkWdVxx2FFui-c"
     CHAT_ID="-1001584611536"
 fi
 
